@@ -48,6 +48,20 @@ class Comment extends AbstractMappedPost
     private $authorEmail;
 
     /**
+     * @ORM\ManyToOne(targetEntity="Article", inversedBy="comments")
+     */
+    private $article;
+
+    /**
+     * @param \AppBundle\Entity\Article $article
+     */
+    public function __construct(Article $article)
+    {
+        $this->setArticle($article);
+        parent::__construct();
+    }
+
+    /**
      * Set authorName.
      *
      * @param string $authorName
@@ -93,5 +107,32 @@ class Comment extends AbstractMappedPost
     public function getAuthorEmail()
     {
         return $this->authorEmail;
+    }
+
+    /**
+     * Set article
+     *
+     * @param \AppBundle\Entity\Article $article
+     * @return Comment
+     */
+    public function setArticle(Article $article)
+    {
+        if ($this->article != null) {
+            $this->article->removeComment($this);
+        }
+        $article->addComment($this);
+        $this->article = $article;
+
+        return $this;
+    }
+
+    /**
+     * Get article
+     *
+     * @return \AppBundle\Entity\Article
+     */
+    public function getArticle()
+    {
+        return $this->article;
     }
 }
