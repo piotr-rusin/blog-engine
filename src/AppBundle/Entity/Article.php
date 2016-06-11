@@ -48,8 +48,15 @@ class Article extends AbstractMappedPost
      */
     private $comments;
 
+    /**
+     * @ORM\ManyToMany(targetEntity="Tag", inversedBy="articles")
+     * @ORM\JoinTable(name="articles_tags")
+     */
+    private $tags;
+
     public function __construct()
     {
+        $this->tags = new ArrayCollection();
         $this->comments = new ArrayCollection();
         parent::__construct();
     }
@@ -133,5 +140,40 @@ class Article extends AbstractMappedPost
     public function getComments()
     {
         return $this->comments;
+    }
+
+    /**
+     * Add tag
+     *
+     * @param \AppBundle\Entity\Tag $tag
+     * @return Article
+     */
+    public function addTag(Tag $tag)
+    {
+        $tag->addArticle($this);
+        $this->tags[] = $tag;
+
+        return $this;
+    }
+
+    /**
+     * Remove tag
+     *
+     * @param \AppBundle\Entity\Tag $tag
+     */
+    public function removeTag(Tag $tag)
+    {
+        $tag->removeArticle($this);
+        $this->tags->removeElement($tag);
+    }
+
+    /**
+     * Get tags
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getTags()
+    {
+        return $this->tags;
     }
 }
