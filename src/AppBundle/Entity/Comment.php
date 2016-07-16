@@ -35,7 +35,7 @@ class Comment extends AbstractMappedPost
      * Name of unregistered author.
      *
      * @ORM\Column(type="string")
-     * @Assert\NotBlank()
+     * @Assert\NotBlank(groups={"UnregisteredAuthor"})
      */
     private $authorName;
 
@@ -43,7 +43,7 @@ class Comment extends AbstractMappedPost
      * Email address of unregistered author.
      *
      * @ORM\Column(type="string")
-     * @Assert\Email()
+     * @Assert\Email(groups={"UnregisteredAuthor"})
      */
     private $authorEmail;
 
