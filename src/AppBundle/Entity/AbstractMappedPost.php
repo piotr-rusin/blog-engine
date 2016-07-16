@@ -41,6 +41,18 @@ abstract class AbstractMappedPost
     /**
      * @ORM\Column(type="text")
      * @Assert\NotBlank()
+     * @Assert\Length(
+     *      min="5",
+     *      minMessage="",
+     *      max="10000",
+     *      maxMessage="",
+     *      groups={"Comment"}
+     * )
+     * @Assert\Length(
+     *      min="10",
+     *      minMessage="",
+     *      groups={"Article"}
+     * )
      */
     protected $content;
 
