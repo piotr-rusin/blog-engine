@@ -61,6 +61,11 @@ abstract class AbstractMappedPost
      * @Assert\DateTime()
      */
     protected $publicationDate;
+    
+    /**
+     * @ORM\Column(type="boolean")
+     */
+    protected $published;
 
     public function __construct()
     {
@@ -123,5 +128,28 @@ abstract class AbstractMappedPost
     public function getContent()
     {
         return $this->content;
+    }
+    
+    /**
+     * Set published
+     *
+     * @param boolean $published
+     * @return Article
+     */
+    public function setPublished($published)
+    {
+        $this->published = $published;
+
+        return $this;
+    }
+
+    /**
+     * Get published
+     *
+     * @return boolean 
+     */
+    public function getPublished()
+    {
+        return $this->published;
     }
 }
