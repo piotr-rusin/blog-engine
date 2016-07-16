@@ -40,6 +40,7 @@ class Article extends AbstractMappedPost
 
     /**
      * @ORM\Column(type="string")
+     * @Assert\NotBlank()
      */
     private $slug;
 
