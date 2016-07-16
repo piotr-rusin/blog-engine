@@ -117,7 +117,7 @@ class Comment extends AbstractMappedPost
      */
     public function setArticle(Article $article)
     {
-        if ($this->article != null) {
+        if ($this->article !== null) {
             $this->article->removeComment($this);
         }
         $article->addComment($this);
