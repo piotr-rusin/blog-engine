@@ -47,6 +47,7 @@ class Tag
 
     /**
      * @ORM\Column(type="string")
+     * @Assert\NotBlank()
      */
     private $slug;
 
