@@ -74,7 +74,7 @@ class Comment extends AbstractMappedPost
         User $registeredAuthor = null,
         $authorName = null,
         $authorEmail = null
-    ){
+    ) {
         $this->registeredAuthor = $registeredAuthor;
         $this->setAuthorName($authorName);
         $this->setAuthorEmail($authorEmail);
