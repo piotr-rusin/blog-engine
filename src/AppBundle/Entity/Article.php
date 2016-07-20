@@ -55,6 +55,9 @@ class Article extends AbstractMappedPost
      */
     private $tags;
 
+    /**
+     * Create a new instance of the class.
+     */
     public function __construct()
     {
         $this->tags = new ArrayCollection();

@@ -67,6 +67,9 @@ abstract class AbstractMappedPost
      */
     protected $published;
 
+    /**
+     * Create a new instance of the class.
+     */
     public function __construct()
     {
         $this->publicationDate = new \DateTime();

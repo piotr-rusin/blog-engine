@@ -47,6 +47,9 @@ class User extends BaseUser
      */
     private $comments;
 
+    /**
+     * Create a new instance of the class.
+     */
     public function __construct()
     {
         $this->comments = new ArrayCollection();
