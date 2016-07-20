@@ -32,6 +32,15 @@ use Symfony\Component\Validator\Constraints as Assert;
 class Comment extends AbstractMappedPost
 {
     /**
+     * An object representing a registered author of the comment, if they exist.
+     *
+     * @ORM\ManyToOne(targetEntity="User", inversedBy="comments")
+     * @Assert\NotBlank(groups={"RegisteredAuthor"})
+     * @Assert\Blank(groups={"UnregisteredAuthor"})
+     */
+    private $registeredAuthor;
+
+    /**
      * Name of unregistered author.
      *
      * @ORM\Column(type="string")
@@ -56,9 +65,11 @@ class Comment extends AbstractMappedPost
 
     /**
      * @param \AppBundle\Entity\Article $article
+     * @param \AppBundle\Entity\User    $registeredAuthor
      */
-    public function __construct(Article $article)
+    public function __construct(Article $article, User $registeredAuthor = null)
     {
+        $this->registeredAuthor = $registeredAuthor;
         $this->setArticle($article);
         parent::__construct();
     }
@@ -136,5 +147,15 @@ class Comment extends AbstractMappedPost
     public function getArticle()
     {
         return $this->article;
+    }
+
+    /**
+     * Get registered author
+     *
+     * @return \AppBundle\Entity\User
+     */
+    public function getRegisteredAuthor()
+    {
+        return $this->registeredAuthor;
     }
 }
