@@ -25,10 +25,10 @@ use Doctrine\Common\Collections\ArrayCollection;
 /**
  * A class representing registered users of the blog, which includes
  * all its admins, blog post authors, moderators and registered readers.
- * 
+ *
  * @ORM\Entity
  * @ORM\Table(name="users")
- * 
+ *
  * @author Piotr Rusin <piotr.rusin88@gmail.com>
  */
 class User extends BaseUser
