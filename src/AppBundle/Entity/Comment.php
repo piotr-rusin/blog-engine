@@ -66,10 +66,18 @@ class Comment extends AbstractMappedPost
     /**
      * @param \AppBundle\Entity\Article $article
      * @param \AppBundle\Entity\User    $registeredAuthor
+     * @param string                    $authorName
+     * @param string                    $authorEmail
      */
-    public function __construct(Article $article, User $registeredAuthor = null)
-    {
+    public function __construct(
+        Article $article,
+        User $registeredAuthor = null,
+        $authorName = null,
+        $authorEmail = null
+    ){
         $this->registeredAuthor = $registeredAuthor;
+        $this->setAuthorName($authorName);
+        $this->setAuthorEmail($authorEmail);
         $this->setArticle($article);
         parent::__construct();
     }
