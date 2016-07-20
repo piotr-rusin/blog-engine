@@ -45,6 +45,14 @@ class Article extends AbstractMappedPost
     private $slug;
 
     /**
+     * An object representing the author of the article.
+     *
+     * @ORM\ManyToOne(targetEntity="User", inversedBy="articles")
+     * @Assert\NotBlank()
+     */
+    private $author;
+
+    /**
      * @ORM\OneToMany(targetEntity="Comment", mappedBy="article")
      */
     private $comments;
@@ -57,9 +65,13 @@ class Article extends AbstractMappedPost
 
     /**
      * Create a new instance of the class.
+     *
+     * @param \AppBundle\Entity\User $author
      */
-    public function __construct()
+    public function __construct(User $author)
     {
+        $author->addArticle($this);
+        $this->author = $author;
         $this->tags = new ArrayCollection();
         $this->comments = new ArrayCollection();
         parent::__construct();
@@ -181,5 +193,15 @@ class Article extends AbstractMappedPost
     public function getTags()
     {
         return $this->tags;
+    }
+
+    /**
+     * Get author of the article.
+     *
+     * @return \AppBundle\Entity\User
+     */
+    public function getAuthor()
+    {
+        return $this->author;
     }
 }
