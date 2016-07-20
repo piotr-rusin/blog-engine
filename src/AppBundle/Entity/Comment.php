@@ -64,6 +64,8 @@ class Comment extends AbstractMappedPost
     private $article;
 
     /**
+     * Create a new instance of the class.
+     *
      * @param \AppBundle\Entity\Article $article
      * @param \AppBundle\Entity\User    $registeredAuthor
      * @param string                    $authorName

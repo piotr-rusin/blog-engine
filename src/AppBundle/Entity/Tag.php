@@ -57,7 +57,7 @@ class Tag
     private $articles;
 
     /**
-     * Constructor.
+     * Create a new instance of the class.
      */
     public function __construct()
     {
