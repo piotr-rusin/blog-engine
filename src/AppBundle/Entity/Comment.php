@@ -47,7 +47,7 @@ class Comment extends AbstractMappedPost
      * @Assert\NotBlank(groups={"UnregisteredAuthor"})
      * @Assert\Blank(groups={"RegisteredAuthor"})
      */
-    private $authorName;
+    private $unregisteredAuthorName;
 
     /**
      * Email address of unregistered author.
@@ -56,7 +56,7 @@ class Comment extends AbstractMappedPost
      * @Assert\Email(groups={"UnregisteredAuthor"})
      * @Assert\Blank(groups={"RegisteredAuthor"})
      */
-    private $authorEmail;
+    private $unregisteredAuthorEmail;
 
     /**
      * @ORM\ManyToOne(targetEntity="Article", inversedBy="comments")
@@ -78,8 +78,8 @@ class Comment extends AbstractMappedPost
         $authorEmail = null
     ) {
         $this->registeredAuthor = $registeredAuthor;
-        $this->setAuthorName($authorName);
-        $this->setAuthorEmail($authorEmail);
+        $this->setUnregisteredAuthorName($authorName);
+        $this->setUnregisteredAuthorEmail($authorEmail);
         $this->setArticle($article);
         parent::__construct();
     }
@@ -91,9 +91,9 @@ class Comment extends AbstractMappedPost
      *
      * @return Comment
      */
-    public function setAuthorName($authorName)
+    public function setUnregisteredAuthorName($authorName)
     {
-        $this->authorName = $authorName;
+        $this->unregisteredAuthorName = $authorName;
 
         return $this;
     }
@@ -103,9 +103,9 @@ class Comment extends AbstractMappedPost
      *
      * @return string
      */
-    public function getAuthorName()
+    public function getUnregisteredAuthorName()
     {
-        return $this->authorName;
+        return $this->unregisteredAuthorName;
     }
 
     /**
@@ -115,9 +115,9 @@ class Comment extends AbstractMappedPost
      *
      * @return Comment
      */
-    public function setAuthorEmail($authorEmail)
+    public function setUnregisteredAuthorEmail($authorEmail)
     {
-        $this->authorEmail = $authorEmail;
+        $this->unregisteredAuthorEmail = $authorEmail;
 
         return $this;
     }
@@ -127,9 +127,9 @@ class Comment extends AbstractMappedPost
      *
      * @return string
      */
-    public function getAuthorEmail()
+    public function getUnregisteredAuthorEmail()
     {
-        return $this->authorEmail;
+        return $this->unregisteredAuthorEmail;
     }
 
     /**
