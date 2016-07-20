@@ -77,7 +77,7 @@ abstract class AbstractMappedPost
      *
      * @param \DateTime $publicationDate
      *
-     * @return MappedPost
+     * @return AbstractMappedPost
      */
     public function setPublicationDate(\DateTime $publicationDate)
     {
@@ -111,7 +111,7 @@ abstract class AbstractMappedPost
      *
      * @param string $content
      *
-     * @return MappedPost
+     * @return AbstractMappedPost
      */
     public function setContent($content)
     {
@@ -135,7 +135,7 @@ abstract class AbstractMappedPost
      *
      * @param bool $published
      *
-     * @return Article
+     * @return AbstractMappedPost
      */
     public function setPublished($published)
     {
