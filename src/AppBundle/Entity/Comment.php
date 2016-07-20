@@ -77,6 +77,7 @@ class Comment extends AbstractMappedPost
         $authorName = null,
         $authorEmail = null
     ) {
+        $registeredAuthor->addComment($this);
         $this->registeredAuthor = $registeredAuthor;
         $this->setUnregisteredAuthorName($authorName);
         $this->setUnregisteredAuthorEmail($authorEmail);
