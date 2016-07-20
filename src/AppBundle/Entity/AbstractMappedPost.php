@@ -61,7 +61,7 @@ abstract class AbstractMappedPost
      * @Assert\DateTime()
      */
     protected $publicationDate;
-    
+
     /**
      * @ORM\Column(type="boolean")
      */
@@ -73,7 +73,7 @@ abstract class AbstractMappedPost
     }
 
     /**
-     * Set publicationDate.
+     * Set publication date.
      *
      * @param \DateTime $publicationDate
      *
@@ -87,7 +87,7 @@ abstract class AbstractMappedPost
     }
 
     /**
-     * Get publicationDate.
+     * Get publication date.
      *
      * @return \DateTime
      */
@@ -129,11 +129,12 @@ abstract class AbstractMappedPost
     {
         return $this->content;
     }
-    
+
     /**
-     * Set published
+     * Set publication status of the post.
      *
-     * @param boolean $published
+     * @param bool $published
+     *
      * @return Article
      */
     public function setPublished($published)
@@ -144,9 +145,9 @@ abstract class AbstractMappedPost
     }
 
     /**
-     * Get published
+     * Check if the post is published.
      *
-     * @return boolean 
+     * @return bool
      */
     public function isPublished()
     {

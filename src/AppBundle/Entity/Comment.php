@@ -83,7 +83,7 @@ class Comment extends AbstractMappedPost
     }
 
     /**
-     * Set authorName.
+     * Set name of unregistered author.
      *
      * @param string $authorName
      *
@@ -97,7 +97,7 @@ class Comment extends AbstractMappedPost
     }
 
     /**
-     * Get authorName.
+     * Get name of unregistered author.
      *
      * @return string
      */
@@ -107,7 +107,7 @@ class Comment extends AbstractMappedPost
     }
 
     /**
-     * Set authorEmail.
+     * Set email address of unregistered author.
      *
      * @param string $authorEmail
      *
@@ -121,7 +121,7 @@ class Comment extends AbstractMappedPost
     }
 
     /**
-     * Get authorEmail.
+     * Get email address of unregistered author.
      *
      * @return string
      */
@@ -131,9 +131,10 @@ class Comment extends AbstractMappedPost
     }
 
     /**
-     * Set article
+     * Set article to which the comment belongs.
      *
      * @param \AppBundle\Entity\Article $article
+     *
      * @return Comment
      */
     public function setArticle(Article $article)
@@ -148,7 +149,7 @@ class Comment extends AbstractMappedPost
     }
 
     /**
-     * Get article
+     * Get article to which the comment belongs.
      *
      * @return \AppBundle\Entity\Article
      */
@@ -158,7 +159,7 @@ class Comment extends AbstractMappedPost
     }
 
     /**
-     * Get registered author
+     * Get registered author.
      *
      * @return \AppBundle\Entity\User
      */

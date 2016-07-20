@@ -67,7 +67,7 @@ class Tag
     }
 
     /**
-     * Set name.
+     * Set name of the tag.
      *
      * @param string $name
      *
@@ -81,7 +81,7 @@ class Tag
     }
 
     /**
-     * Get name.
+     * Get name of the tag.
      *
      * @return string
      */
@@ -91,7 +91,7 @@ class Tag
     }
 
     /**
-     * Set slug.
+     * Set slug representing the tag.
      *
      * @param string $slug
      *
@@ -105,7 +105,7 @@ class Tag
     }
 
     /**
-     * Get slug.
+     * Get slug representing the tag.
      *
      * @return string
      */
@@ -114,7 +114,7 @@ class Tag
         return $this->slug;
     }
     /**
-     * Constructor
+     * Constructor.
      */
     public function __construct()
     {
@@ -122,9 +122,10 @@ class Tag
     }
 
     /**
-     * Add article
+     * Add an article to those tagged with this tag.
      *
      * @param \AppBundle\Entity\Article $article
+     *
      * @return Tag
      */
     public function addArticle(Article $article)
@@ -135,7 +136,7 @@ class Tag
     }
 
     /**
-     * Remove article
+     * Remove an article from all of articles tagged with this tag.
      *
      * @param \AppBundle\Entity\Article $article
      */
@@ -145,7 +146,7 @@ class Tag
     }
 
     /**
-     * Get articles
+     * Get articles tagged with this tag.
      *
      * @return \Doctrine\Common\Collections\Collection
      */

@@ -63,7 +63,7 @@ class Article extends AbstractMappedPost
     }
 
     /**
-     * Set title.
+     * Set title of the article.
      *
      * @param string $title
      *
@@ -77,7 +77,7 @@ class Article extends AbstractMappedPost
     }
 
     /**
-     * Get title.
+     * Get title of the article.
      *
      * @return string
      */
@@ -87,7 +87,7 @@ class Article extends AbstractMappedPost
     }
 
     /**
-     * Set slug.
+     * Set slug representing the article.
      *
      * @param string $slug
      *
@@ -101,7 +101,7 @@ class Article extends AbstractMappedPost
     }
 
     /**
-     * Get slug.
+     * Get slug representing the article.
      *
      * @return string
      */
@@ -111,9 +111,10 @@ class Article extends AbstractMappedPost
     }
 
     /**
-     * Add comment
+     * Add a comment.
      *
      * @param \AppBundle\Entity\Comment $comment
+     *
      * @return Article
      */
     public function addComment(Comment $comment)
@@ -124,7 +125,7 @@ class Article extends AbstractMappedPost
     }
 
     /**
-     * Remove comment
+     * Remove a comment.
      *
      * @param \AppBundle\Entity\Comment $comment
      */
@@ -134,7 +135,7 @@ class Article extends AbstractMappedPost
     }
 
     /**
-     * Get comments
+     * Get comments.
      *
      * @return \Doctrine\Common\Collections\Collection
      */
@@ -144,9 +145,10 @@ class Article extends AbstractMappedPost
     }
 
     /**
-     * Add tag
+     * Add a tag.
      *
      * @param \AppBundle\Entity\Tag $tag
+     *
      * @return Article
      */
     public function addTag(Tag $tag)
@@ -158,7 +160,7 @@ class Article extends AbstractMappedPost
     }
 
     /**
-     * Remove tag
+     * Remove a tag.
      *
      * @param \AppBundle\Entity\Tag $tag
      */
@@ -169,7 +171,7 @@ class Article extends AbstractMappedPost
     }
 
     /**
-     * Get tags
+     * Get tags.
      *
      * @return \Doctrine\Common\Collections\Collection
      */

@@ -41,7 +41,7 @@ class User extends BaseUser
     protected $id;
 
     /**
-     * Comments authored by the user
+     * Comments authored by the user.
      *
      * @ORM\OneToMany(targetEntity="Comment", mappedBy="registeredAuthor")
      */
@@ -54,9 +54,10 @@ class User extends BaseUser
     }
 
     /**
-     * Add a comment
+     * Add a comment.
      *
      * @param \AppBundle\Entity\Comment $comment
+     *
      * @return User
      */
     public function addComment(Comment $comment)
@@ -67,7 +68,7 @@ class User extends BaseUser
     }
 
     /**
-     * Remove a comment
+     * Remove a comment.
      *
      * @param \AppBundle\Entity\Comment $comment
      */
@@ -77,7 +78,7 @@ class User extends BaseUser
     }
 
     /**
-     * Get comments
+     * Get comments.
      *
      * @return \Doctrine\Common\Collections\ArrayCollection
      */
