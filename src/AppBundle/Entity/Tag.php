@@ -57,6 +57,14 @@ class Tag
     private $articles;
 
     /**
+     * Constructor.
+     */
+    public function __construct()
+    {
+        $this->articles = new ArrayCollection();
+    }
+
+    /**
      * Get id.
      *
      * @return int
@@ -112,13 +120,6 @@ class Tag
     public function getSlug()
     {
         return $this->slug;
-    }
-    /**
-     * Constructor.
-     */
-    public function __construct()
-    {
-        $this->articles = new ArrayCollection();
     }
 
     /**
