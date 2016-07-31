@@ -1,0 +1,33 @@
+parameters:
+    blank_slug: 'Please enter a custom slug value'
+    has_to_be_blank: 'This value has to be blank for registered author'
+    blank: 'This value cannot be blank'
+tag:
+    slug:
+        blank: '%blank_slug%'
+    name:
+        blank: '%blank%'
+article:
+    title:
+        blank: 'Please enter the title of the article'
+    slug:
+        blank: '%blank_slug%'
+    author:
+        blank: '%blank%'
+post:
+    content:
+        blank: 'Please enter post content'
+        too_short: 'The value cannot be shorter than {{ limit }} characters'
+        too_long: 'The value cannot be longer than {{ limit }} characters'
+    publication_date:
+        invalid: 'This value is not a valid date'
+comment:
+    registered_author:
+        blank: 'This value must be set for registered author'
+        not_blank: 'This value has to be blank for unregistered author'
+    unregistered_author_name:
+        blank: 'Please enter the name of the author'
+        not_blank: '%has_to_be_blank%'
+    unregistered_author_email:
+        invalid: 'This value is not a valid email address'
+        not_blank: '%has_to_be_blank%'

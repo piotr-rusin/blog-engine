@@ -34,13 +34,13 @@ class Article extends AbstractMappedPost
 {
     /**
      * @ORM\Column(type="string")
-     * @Assert\NotBlank()
+     * @Assert\NotBlank(message="article.title.blank")
      */
     private $title;
 
     /**
      * @ORM\Column(type="string")
-     * @Assert\NotBlank()
+     * @Assert\NotBlank(message="article.slug.blank")
      */
     private $slug;
 
@@ -48,7 +48,7 @@ class Article extends AbstractMappedPost
      * An object representing the author of the article.
      *
      * @ORM\ManyToOne(targetEntity="User", inversedBy="articles")
-     * @Assert\NotBlank()
+     * @Assert\NotBlank(message="article.author.blank")
      */
     private $author;
 

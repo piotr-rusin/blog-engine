@@ -41,13 +41,13 @@ class Tag
 
     /**
      * @ORM\Column(type="string")
-     * @Assert\NotBlank()
+     * @Assert\NotBlank(message="tag.name.blank")
      */
     private $name;
 
     /**
      * @ORM\Column(type="string")
-     * @Assert\NotBlank()
+     * @Assert\NotBlank(message="tag.slug.blank")
      */
     private $slug;
 

@@ -35,8 +35,14 @@ class Comment extends AbstractMappedPost
      * An object representing a registered author of the comment, if they exist.
      *
      * @ORM\ManyToOne(targetEntity="User", inversedBy="comments")
-     * @Assert\NotBlank(groups={"RegisteredAuthor"})
-     * @Assert\Blank(groups={"UnregisteredAuthor"})
+     * @Assert\NotBlank(
+     *      groups={"RegisteredAuthor"},
+     *      message="comment.registered_author.blank"
+     * )
+     * @Assert\Blank(
+     *      groups={"UnregisteredAuthor"},
+     *      message="comment.registered_author.not_blank"
+     * )
      */
     private $registeredAuthor;
 
@@ -44,8 +50,14 @@ class Comment extends AbstractMappedPost
      * Name of unregistered author.
      *
      * @ORM\Column(type="string")
-     * @Assert\NotBlank(groups={"UnregisteredAuthor"})
-     * @Assert\Blank(groups={"RegisteredAuthor"})
+     * @Assert\NotBlank(
+     *      groups={"UnregisteredAuthor"},
+     *      message="comment.unregistered_author_name.blank"
+     * )
+     * @Assert\Blank(
+     *      groups={"RegisteredAuthor"},
+     *      message="comment.unregistered_author_name.not_blank"
+     * )
      */
     private $unregisteredAuthorName;
 
@@ -53,8 +65,14 @@ class Comment extends AbstractMappedPost
      * Email address of unregistered author.
      *
      * @ORM\Column(type="string")
-     * @Assert\Email(groups={"UnregisteredAuthor"})
-     * @Assert\Blank(groups={"RegisteredAuthor"})
+     * @Assert\Email(
+     *      groups={"UnregisteredAuthor"},
+     *      message="comment.unregistered_author_email.invalid"
+     * )
+     * @Assert\Blank(
+     *      groups={"RegisteredAuthor"},
+     *      message="comment.unregistered_author_email.not_blank"
+     * )
      */
     private $unregisteredAuthorEmail;
 

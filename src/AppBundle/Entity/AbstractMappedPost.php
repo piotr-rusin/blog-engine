@@ -40,17 +40,17 @@ abstract class AbstractMappedPost
 
     /**
      * @ORM\Column(type="text")
-     * @Assert\NotBlank()
+     * @Assert\NotBlank(message="post.content.blank")
      * @Assert\Length(
      *      min="5",
-     *      minMessage="",
+     *      minMessage="post.content.too_short",
      *      max="10000",
-     *      maxMessage="",
+     *      maxMessage="post.content.too_long",
      *      groups={"Comment"}
      * )
      * @Assert\Length(
      *      min="10",
-     *      minMessage="",
+     *      minMessage="post.content.too_short",
      *      groups={"Article"}
      * )
      */
@@ -58,7 +58,7 @@ abstract class AbstractMappedPost
 
     /**
      * @ORM\Column(type="datetime")
-     * @Assert\DateTime()
+     * @Assert\DateTime(message="post.publication_date.invalid")
      */
     protected $publicationDate;
 
