@@ -1,6 +1,6 @@
 {
     "name": "piotr-rusin/blog.engine",
-    "license": "proprietary",
+    "license": "MIT",
     "type": "project",
     "autoload": {
         "psr-4": {
