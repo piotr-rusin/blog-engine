@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "60ce58374760c327990cd1fbeaa66e10",
-    "content-hash": "acd9057d7164eb9754c433946b96bcd7",
+    "hash": "9f1b0e896bee8b722c92999284913a75",
+    "content-hash": "bb570684cae9a6a3ee4daa3864add751",
     "packages": [
         {
             "name": "doctrine/annotations",
@@ -2810,6 +2810,66 @@
                 "xunit"
             ],
             "time": "2015-10-02 06:51:40"
+        },
+        {
+            "name": "phpunit/phpunit-skeleton-generator",
+            "version": "2.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/sebastianbergmann/phpunit-skeleton-generator.git",
+                "reference": "c0eeb18f31893c2f0c387bce84f8a3816a0eacd1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit-skeleton-generator/zipball/c0eeb18f31893c2f0c387bce84f8a3816a0eacd1",
+                "reference": "c0eeb18f31893c2f0c387bce84f8a3816a0eacd1",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.3",
+                "phpunit/php-text-template": "~1.2",
+                "sebastian/version": "~1.0",
+                "symfony/console": "~2.4"
+            },
+            "require-dev": {
+                "mikey179/vfsstream": "~1.2",
+                "phpunit/phpunit": "~4.0"
+            },
+            "bin": [
+                "phpunit-skelgen"
+            ],
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.0.x-dev"
+                }
+            },
+            "autoload": {
+                "classmap": [
+                    "src/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Sebastian Bergmann",
+                    "email": "sebastian@phpunit.de",
+                    "role": "lead"
+                }
+            ],
+            "description": "Tool that can generate skeleton test classes from production code classes and vice versa",
+            "homepage": "https://github.com/sebastianbergmann/phpunit-skeleton-generator",
+            "keywords": [
+                "Skeleton",
+                "phpunit",
+                "testing",
+                "xunit"
+            ],
+            "abandoned": true,
+            "time": "2014-05-14 17:42:22"
         },
         {
             "name": "sebastian/comparator",
