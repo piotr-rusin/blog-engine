@@ -1,4 +1,8 @@
-blog-engine
-===========
+#blog-engine
 
-A Symfony project created on June 10, 2016, 10:43 am.
+A blog engine/content-management system based on Symfony.
+
+##License
+
+MIT
+See [LICENSE](https://github.com/piotr-rusin/blog-engine/blob/master/LICENSE)
