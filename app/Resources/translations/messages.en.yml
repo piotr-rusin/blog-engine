@@ -1,0 +1,7 @@
+## YAML Template.
+form:
+    comment:
+        content: 'Content'
+        submit: 'Post comment'
+        author_name: 'Author name'
+        author_email: 'Author email'
