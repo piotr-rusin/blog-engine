@@ -39,7 +39,7 @@ use Doctrine\Common\Collections\ArrayCollection;
  *
  * @author Piotr Rusin <piotr.rusin88@gmail.com>
  */
-class User extends BaseUser
+class User extends BaseUser implements UserInterface
 {
     /**
      * @ORM\Id
@@ -138,5 +138,27 @@ class User extends BaseUser
     public function getArticles()
     {
         return $this->articles;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function isModerator()
+    {
+        return $this->hasRole(static::ROLE_MODERATOR);
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function setModerator($boolean)
+    {
+        if ($boolean === true) {
+            $this->addRole(static::ROLE_MODERATOR);
+        } else {
+            $this->removeRole(static::ROLE_MODERATOR);
+        }
+
+        return $this;
     }
 }
